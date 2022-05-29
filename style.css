@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #354F52;
+    background: linear-gradient(45deg, #0b3866, #95f9c3);
 }
 section::before{
     position: absolute;
