@@ -1,0 +1,126 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #354F52;
+}
+section::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(#ffcf67, #d3321d);
+    width: 100%;
+    height: 100%;
+    clip-path: circle(30% at right 50%);
+}
+
+section::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(#ff5858, #ffc8c8);
+    width: 100%;
+    height: 100%;
+    clip-path: circle(20% at 10% 10%);
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container .card{
+    position: relative;
+    width: 320px;
+    height: 400px;
+    box-shadow: 0 20px 35px(white);
+    background: rgba(0,0,0,0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: 0.5s;
+}
+.container .card .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.container .card:hover .content{
+    opacity: 1;
+}
+.container .card .content .contentImg{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.container .card .content .contentImg img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .card .content .contentImg img:first-child{
+    background: white;
+}
+.container .card .content .contentText h2{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.9em;
+}
+.container .card .content .contentText h2 span{
+    text-transform: initial;
+}
+.container .card .icons{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.container .card .icons li{
+    list-style: none;
+    margin: 0 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .card:hover .icons li{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: calc(0.1s * var(--i));
+}
+.container .card .icons li a{
+    color: white;
+    font-size: 1.6em;
+}
+.container .card:hover .content{
+    transform: translateY(-20px);
+}
